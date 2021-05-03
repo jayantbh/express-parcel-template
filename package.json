@@ -2,12 +2,22 @@
   "name": "express-parcel-template",
   "version": "1.0.0",
   "description": "Express + Parcel template repo",
-  "main": "index.js",
+  "main": "dist/index.html",
   "repository": "https://github.com/jayantbh/express-parcel-template",
   "author": "Jayant Bhawal <bhawal.jayant@gmail.com>",
   "license": "MIT",
   "private": true,
   "devDependencies": {
+    "@parcel/transformer-sass": "2.0.0-beta.2",
+    "concurrently": "^6.0.2",
     "parcel": "^2.0.0-beta.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "watch-pages": "parcel watch public/index.html",
+    "node-server": "node index.js",
+    "start": "concurrently \"yarn watch-pages\" \"yarn node-server\""
   }
 }
