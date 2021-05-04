@@ -10,14 +10,16 @@
   "devDependencies": {
     "@parcel/transformer-sass": "2.0.0-beta.2",
     "concurrently": "^6.0.2",
+    "hbs": "^4.1.2",
     "parcel": "^2.0.0-beta.2"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
   },
   "scripts": {
-    "watch-pages": "parcel watch public/index.html",
+    "build-pages": "parcel watch public/*.html",
     "node-server": "node index.js",
-    "start": "concurrently \"yarn watch-pages\" \"yarn node-server\""
+    "start": "concurrently \"yarn build-pages\" \"yarn node-server\""
   }
 }
